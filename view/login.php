@@ -1,10 +1,5 @@
 <?php
 include("bars.php");
-session_start();
-if (isset($_SESSION['error'])) {
-    $error = $_SESSION['error'];
-    unset($_SESSION['error']);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,12 +42,6 @@ if (isset($_SESSION['error'])) {
             <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
                 <div class="log-in-box">
                     <div class="log-in-title">
-                    <?php if (isset($error)): ?>
-    <div class="alert alert-danger">
-        <?= $error ?>
-    </div>
-<?php endif ?>
-
                         <h3>Welcome To Fastkart</h3>
                         <h4>Log In Your Account</h4>
                     </div>
@@ -86,7 +75,6 @@ if (isset($_SESSION['error'])) {
                             <div class="col-12">
                                 <button class="btn btn-animation w-100 justify-content-center" type="submit" name="login" value="Login">Log In</button>
                             </div>
-                            
                         </form>
                     </div>
 
