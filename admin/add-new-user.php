@@ -1,6 +1,5 @@
 <?php
 include("bars.php");
-echo"hello";
 ?>
 
 <!DOCTYPE html>
