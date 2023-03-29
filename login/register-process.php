@@ -3,7 +3,7 @@
 require("../controllers/customer_controller.php");
 
 //check for 
-if (isset($_POST['regis'])){
+if (isset($_POST['regis'])) {
 	//register custoner
 	$customer_name = ($_POST['customer_name']);
 	$customer_email = ($_POST['customer_email']);
@@ -15,12 +15,10 @@ if (isset($_POST['regis'])){
 
 	//call a controller
 	//customer register
-	$check = insert_new_customer_ctr($customer_name,$customer_email,$customer_password,$customer_city,$customer_address,$customer_no,$user_role);
-	if ($check){
+	$check = insert_new_customer_ctr($customer_name, $customer_email, $customer_password, $customer_city, $customer_address, $customer_no, $user_role);
+	if ($check) {
 		header("location:../view/login.php");
 	} else {
 		echo "Insert failed";
 	}
 }
-
-?>

@@ -47,17 +47,19 @@ include("bars.php");
                     </div>
 
                     <div class="input-box">
-                        <form class="row g-4" action="../login/login-process.php" method="post">
+                        <form class="row g-4" action="../login/login-process.php" method="post" id="login-form">
                             <div class="col-12">
                                 <div class="form-floating theme-form-floating log-in-form">
-                                    <input type="email" class="form-control" id="email" placeholder="Email Address" name="customer_email" required>
+                                    <input type="email" class="form-control" id="email" placeholder="Email Address"
+                                        name="customer_email" required>
                                     <label for="email">Email Address</label>
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <div class="form-floating theme-form-floating log-in-form">
-                                    <input type="password" class="form-control" id="password" placeholder="Password" name="customer_password" required>
+                                    <input type="password" class="form-control" id="password" placeholder="Password"
+                                        name="customer_password" required>
                                     <label for="password">Password</label>
                                 </div>
                             </div>
@@ -65,7 +67,8 @@ include("bars.php");
                             <div class="col-12">
                                 <div class="forgot-box">
                                     <div class="form-check ps-0 m-0 remember-box">
-                                        <input class="checkbox_animated check-box" type="checkbox" id="flexCheckDefault">
+                                        <input class="checkbox_animated check-box" type="checkbox"
+                                            id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">Remember me</label>
                                     </div>
                                     <a href="forgot.php" class="forgot-password">Forgot Password?</a>
@@ -73,7 +76,8 @@ include("bars.php");
                             </div>
 
                             <div class="col-12">
-                                <button class="btn btn-animation w-100 justify-content-center" type="submit" name="login" value="Login">Log In</button>
+                                <button class="btn btn-animation w-100 justify-content-center" type="submit"
+                                    name="login" value="Login">Log In</button>
                             </div>
                         </form>
                     </div>
@@ -90,6 +94,9 @@ include("bars.php");
             </div>
         </div>
     </div>
+
+
+
 </section>
 <!-- log in section end -->
 
@@ -132,6 +139,44 @@ include("bars.php");
 
 <!-- script js -->
 <script src="../assets/js/script.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#login-form').on('submit', function (e) {
+            e.preventDefault();
+            var email = $('#email').val();
+            var password = $('#password').val();
+            $.ajax({
+                type: 'POST',
+                url: '../login/login-process.php',
+                data: { customer_email: email, customer_password: password, login: 'Login' },
+                success: function (response) {
+                    if (response == 'success') {
+                        window.location.href = '../view/homepage.php';
+                    } else if (response == 'error') {
+                        $('#myModal').modal('show');
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Invalid email or password</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Please check your email and password and try again.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
 
 </html>
