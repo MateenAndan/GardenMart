@@ -24,6 +24,9 @@
 
     <!-- App css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 </head>
 
 <body>
@@ -41,17 +44,19 @@
                         </div>
 
                         <div class="input-box">
-                            <form class="row g-4" action="../login/admin-login.php" method="post">
+                            <form class="row g-4" action="../login/admin-login.php" method="post" id="login-form">
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
-                                        <input type="email" class="form-control" id="email" placeholder="Email Address" name="admin_email">
+                                        <input type="email" class="form-control" id="email" placeholder="Email Address"
+                                            name="admin_email">
                                         <label for="email">Email Address</label>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-floating theme-form-floating log-in-form">
-                                        <input type="password" class="form-control" id="password" placeholder="Password" name="admin_password">
+                                        <input type="password" class="form-control" id="password" placeholder="Password"
+                                            name="admin_password">
                                         <label for="password">Password</label>
                                     </div>
                                 </div>
@@ -68,7 +73,8 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <button class="btn btn-animation w-100 justify-content-center" type="submit" name="admin_login" value="Login">Log
+                                    <button class="btn btn-animation w-100 justify-content-center" type="submit"
+                                        name="admin_login" value="Login">Log
                                         In</button>
                                 </div>
                             </form>
@@ -79,6 +85,53 @@
         </div>
     </section>
     <!-- login section end -->
+
+    <!-- latest jquery-->
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap js-->
+<script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/bootstrap/popper.min.js"></script>
+
+
+    <!-- script js -->
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#login-form').on('submit', function (e) {
+                e.preventDefault();
+                var email = $('#email').val();
+                var password = $('#password').val();
+                $.ajax({
+                    type: 'POST',
+                    url: '../login/admin-login.php',
+                    data: { admin_email: email, admin_password: password, admin_login: 'Login' },
+                    success: function (response) {
+                        if (response == 'success') {
+                            window.location.href = '../admin/admin.php';
+                        } else if (response == 'error') {
+                            $('#myModal').modal('show');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Invalid email or password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Please check your email and password and try again.
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
