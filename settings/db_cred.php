@@ -1,6 +1,6 @@
 <?php
 //Database credentials
-define("DATABASE", "gardenmart");
+define("DATABASE", "garden");
 define("SERVER", "localhost");
 define("USERNAME", "root");
 define("PASSWD", "");

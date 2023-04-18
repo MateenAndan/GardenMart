@@ -1,11 +1,12 @@
 <?php
 include("../settings/core.php");
-// include("../controllers/product_controller.php");
+include("../controllers/global_controller.php");
+session_start();
 check_login();
 $adminn = check_admin();
 if ($adminn == 1) {
 	// code...
-}else{
+} else {
 	// echo "no access";
 }
 // echo "this is the admin page";
@@ -13,14 +14,15 @@ if ($adminn == 1) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description"
-	content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+		content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
 	<meta name="keywords"
-	content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+		content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
 	<meta name="author" content="pixelstrap">
 	<link rel="icon" href="../assets/images/favicon/logo.png" type="image/x-icon">
 	<link rel="shortcut icon" href="../assets/images/favicon/logo.png" type="image/x-icon">
@@ -28,8 +30,8 @@ if ($adminn == 1) {
 
 	<!-- Google font-->
 	<link
-	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-	rel="stylesheet">
+		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
 
 	<!-- Linear Icon css -->
 	<link rel="stylesheet" href="assets/css/linearicon.css">
@@ -92,7 +94,7 @@ if ($adminn == 1) {
 						<div class="Typeahead Typeahead--twitterUsers">
 							<div class="u-posRelative">
 								<input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
-								placeholder="Search..." name="q" title="" autofocus>
+									placeholder="Search..." name="q" title="" autofocus>
 								<i class="close-search" data-feather="x"></i>
 								<div class="spinner-border Typeahead-spinner" role="status">
 									<span class="sr-only">Loading...</span>
@@ -122,25 +124,25 @@ if ($adminn == 1) {
 								<li>
 									<p>
 										<i class="fa fa-circle me-2 font-primary"></i>Delivery processing <span
-										class="pull-right">10 min.</span>
+											class="pull-right">10 min.</span>
 									</p>
 								</li>
 								<li>
 									<p>
 										<i class="fa fa-circle me-2 font-success"></i>Order Complete<span
-										class="pull-right">1 hr</span>
+											class="pull-right">1 hr</span>
 									</p>
 								</li>
 								<li>
 									<p>
 										<i class="fa fa-circle me-2 font-info"></i>Tickets Generated<span
-										class="pull-right">3 hr</span>
+											class="pull-right">3 hr</span>
 									</p>
 								</li>
 								<li>
 									<p>
 										<i class="fa fa-circle me-2 font-danger"></i>Delivery Complete<span
-										class="pull-right">6 hr</span>
+											class="pull-right">6 hr</span>
 									</p>
 								</li>
 								<li>
@@ -157,7 +159,9 @@ if ($adminn == 1) {
 						<li class="profile-nav onhover-dropdown pe-0 me-0">
 							<div class="media profile-media">
 								<div class="user-name-hide media-body">
-									<span>Emay Walter</span>
+									<span>
+										<?php echo $_SESSION['admin_name']; ?>
+									</span>
 									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
 								</div>
 							</div>
@@ -188,258 +192,241 @@ if ($adminn == 1) {
 								</li>
 								<li>
 									<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-									href="../login/logout.php">
-									<i data-feather="log-out"></i>
-									<span>Log out</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
+										href="../login/logout.php">
+										<i data-feather="log-out"></i>
+										<span>Log out</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Page Header Ends-->
+		<!-- Page Header Ends-->
 
-	<!-- Page Body Start-->
-	<div class="page-body-wrapper">
-		<!-- Page Sidebar Start-->
-		<div class="sidebar-wrapper">
-			<div id="sidebarEffect"></div>
-			<div>
-				<div class="logo-wrapper logo-wrapper-center">
-					<a href="admin.php" data-bs-original-title="" title="">
-						<img class="img-fluid for-white" src="../assets/images/logo/glogo1.png" alt="logo">
-					</a>
-					<div class="back-btn">
-						<i class="fa fa-angle-left"></i>
+		<!-- Page Body Start-->
+		<div class="page-body-wrapper">
+			<!-- Page Sidebar Start-->
+			<div class="sidebar-wrapper">
+				<div id="sidebarEffect"></div>
+				<div>
+					<div class="logo-wrapper logo-wrapper-center">
+						<a href="admin.php" data-bs-original-title="" title="">
+							<img class="img-fluid for-white" src="../assets/images/logo/glogo1.png" alt="logo">
+						</a>
+						<div class="back-btn">
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<div class="toggle-sidebar">
+							<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
+						</div>
 					</div>
-					<div class="toggle-sidebar">
-						<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
+					<div class="logo-icon-wrapper">
+						<a href="admin.php">
+							<img class="img-fluid main-logo main-white" src="../assets/images/logo/glogo1.png"
+								alt="logo">
+							<img class="img-fluid main-logo main-dark" src="../assets/images/logo/glogo1.png"
+								alt="logo">
+						</a>
 					</div>
-				</div>
-				<div class="logo-icon-wrapper">
-					<a href="admin.php">
-						<img class="img-fluid main-logo main-white" src="../assets/images/logo/glogo1.png" alt="logo">
-						<img class="img-fluid main-logo main-dark" src="../assets/images/logo/glogo1.png"
-						alt="logo">
-					</a>
-				</div>
-				<nav class="sidebar-main">
-					<div class="left-arrow" id="left-arrow">
-						<i data-feather="arrow-left"></i>
-					</div>
+					<nav class="sidebar-main">
+						<div class="left-arrow" id="left-arrow">
+							<i data-feather="arrow-left"></i>
+						</div>
 
-					<div id="sidebar-menu">
-						<ul class="sidebar-links" id="simple-bar">
-							<li class="back-btn"></li>
+						<div id="sidebar-menu">
+							<ul class="sidebar-links" id="simple-bar">
+								<li class="back-btn"></li>
 
-							<li class="sidebar-list">
-								<a class="sidebar-link sidebar-title link-nav" href="admin.php">
-									<i class="ri-home-line"></i>
-									<span>Dashboard</span>
-								</a>
-							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="admin.php">
+										<i class="ri-home-line"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
 
-							<li class="sidebar-list">
-								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-									<i class="ri-store-3-line"></i>
-									<span>Product</span>
-								</a>
-								<ul class="sidebar-submenu">
-									<li>
-										<a href="products.php">Prodcts</a>
-									</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-store-3-line"></i>
+										<span>Product</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="products.php">Prodcts</a>
+										</li>
 
-									<li>
-										<a href="add-new-product.php">Add New Products</a>
-									</li>
-								</ul>
-							</li>
+										<li>
+											<a href="add-new-product.php">Add New Products</a>
+										</li>
+									</ul>
+								</li>
 
-							<li class="sidebar-list">
-								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-									<i class="ri-list-check-2"></i>
-									<span>Category</span>
-								</a>
-								<ul class="sidebar-submenu">
-									<li>
-										<a href="category.php">Category List</a>
-									</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>Category</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="category.php">Category List</a>
+										</li>
 
-									<li>
-										<a href="add-new-category.php">Add New Category</a>
-									</li>
-								</ul>
-							</li>
+										<li>
+											<a href="add-new-category.php">Add New Category</a>
+										</li>
+									</ul>
+								</li>
 
-							<li class="sidebar-list">
-								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-									<i class="ri-list-settings-line"></i>
-									<span>Brands</span>
-								</a>
-								<ul class="sidebar-submenu">
-									<li>
-										<a href="brands.php">Brand List</a>
-									</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-settings-line"></i>
+										<span>Brands</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="brands.php">Brand List</a>
+										</li>
 
-									<li>
-										<a href="add-new-brand.php">Add Brand</a>
-									</li>
-								</ul>
-							</li>
+										<li>
+											<a href="add-new-brand.php">Add Brand</a>
+										</li>
+									</ul>
+								</li>
 
-							<!-- <li class="sidebar-list">
-								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-									<i class="ri-list-settings-line"></i>
-									<span>Attributes</span>
-								</a>
-								<ul class="sidebar-submenu">
-									<li>
-										<a href="attributes.php">Attributes</a>
-									</li>
-
-									<li>
-										<a href="add-new-attributes.php">Add Attributes</a>
-									</li>
-								</ul>
-							</li> -->
-
-							<li class="sidebar-list">
-								<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-									<i class="ri-user-3-line"></i>
-									<span>Users</span>
-								</a>
-								<ul class="sidebar-submenu">
-									<li>
-										<a href="all-users.php">All users</a>
-									</li>
-									<li>
-										<a href="add-new-user.php">Add new user</a>
-									</li>
-								</ul>
-							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-user-3-line"></i>
+										<span>Users</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="all-users.php">All users</a>
+										</li>
+										<li>
+											<a href="add-new-user.php">Add new user</a>
+										</li>
+									</ul>
+								</li>
 
 
-							<li class="sidebar-list">
-								<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-									<i class="ri-archive-line"></i>
-									<span>Orders</span>
-								</a>
-								<ul class="sidebar-submenu">
-									<li>
-										<a href="order-list.php">Order List</a>
-									</li>
-									<li>
-										<a href="order-detail.php">Order Detail</a>
-									</li>
-									<li>
-										<a href="order-tracking.php">Order Tracking</a>
-									</li>
-								</ul>
-							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-archive-line"></i>
+										<span>Orders</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="order-list.php">Order List</a>
+										</li>
+										<li>
+											<a href="order-detail.php">Order Detail</a>
+										</li>
+										<li>
+											<a href="order-tracking.php">Order Tracking</a>
+										</li>
+									</ul>
+								</li>
 
-							<li class="sidebar-list">
-								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-									<i class="ri-price-tag-3-line"></i>
-									<span>Coupons</span>
-								</a>
-								<ul class="sidebar-submenu">
-									<li>
-										<a href="coupon-list.php">Coupon List</a>
-									</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-price-tag-3-line"></i>
+										<span>Coupons</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="coupon-list.php">Coupon List</a>
+										</li>
 
-									<li>
-										<a href="create-coupon.php">Create Coupon</a>
-									</li>
-								</ul>
-							</li>
+										<li>
+											<a href="create-coupon.php">Create Coupon</a>
+										</li>
+									</ul>
+								</li>
 
-							<!-- <li class="sidebar-list">
+								<!-- <li class="sidebar-list">
 								<a class="sidebar-link sidebar-title link-nav" href="taxes.php">
 									<i class="ri-price-tag-3-line"></i>
 									<span>Tax</span>
 								</a>
 							</li> -->
 
-							<li class="sidebar-list">
-								<a class="sidebar-link sidebar-title link-nav" href="product-review.php">
-									<i class="ri-star-line"></i>
-									<span>Product Review</span>
-								</a>
-							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="product-review.php">
+										<i class="ri-star-line"></i>
+										<span>Product Review</span>
+									</a>
+								</li>
 
-							<li class="sidebar-list">
-								<a class="sidebar-link sidebar-title link-nav" href="support-ticket.php">
-									<i class="ri-phone-line"></i>
-									<span>Support Ticket</span>
-								</a>
-							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="support-ticket.php">
+										<i class="ri-phone-line"></i>
+										<span>Support Ticket</span>
+									</a>
+								</li>
 
-							<li class="sidebar-list">
-								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-									<i class="ri-settings-line"></i>
-									<span>Settings</span>
-								</a>
-								<ul class="sidebar-submenu">
-									<li>
-										<a href="profile-setting.php">Profile Setting</a>
-									</li>
-								</ul>
-							</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-settings-line"></i>
+										<span>Settings</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="profile-setting.php">Profile Setting</a>
+										</li>
+									</ul>
+								</li>
 
-							<li class="sidebar-list">
-								<a class="sidebar-link sidebar-title link-nav" href="reports.php">
-									<i class="ri-file-chart-line"></i>
-									<span>Reports</span>
-								</a>
-							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="reports.php">
+										<i class="ri-file-chart-line"></i>
+										<span>Reports</span>
+									</a>
+								</li>
 
-							<!-- <li class="sidebar-list">
+								<!-- <li class="sidebar-list">
 								<a class="sidebar-link sidebar-title link-nav" href="list-page.php">
 									<i class="ri-list-check"></i>
 									<span>List Page</span>
 								</a>
 							</li> -->
-						</ul>
-					</div>
+							</ul>
+						</div>
 
-					<div class="right-arrow" id="right-arrow">
-						<i data-feather="arrow-right"></i>
-					</div>
-				</nav>
+						<div class="right-arrow" id="right-arrow">
+							<i data-feather="arrow-right"></i>
+						</div>
+					</nav>
+				</div>
 			</div>
-		</div>
-		<!-- Page Sidebar Ends-->
-		
-		<!-- Modal Start -->
-		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-		aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog  modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-body">
-					<h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
-					<p>Are you sure you want to log out?</p>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					<div class="button-box">
-						<button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
-						<button type="button" class="btn  btn--yes btn-primary" href="../login/logout.php">Yes</button>
+			<!-- Page Sidebar Ends-->
+
+			<!-- Modal Start -->
+			<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+				aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				<div class="modal-dialog  modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body">
+							<h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
+							<p>Are you sure you want to log out?</p>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							<div class="button-box">
+								<button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
+								<button type="button" class="btn  btn--yes btn-primary"
+									href="../login/logout.php">Yes</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	<script>
-		document.querySelector('.btn--yes').addEventListener('click', function() {
-			window.location.href = this.getAttribute('href');
-		});
-	</script>
+			<script>
+				document.querySelector('.btn--yes').addEventListener('click', function () {
+					window.location.href = this.getAttribute('href');
+				});
+			</script>
 
-	<!-- Modal End -->
+			<!-- Modal End -->
 </body>
+
 </html>
-
-
-
-

@@ -1,21 +1,21 @@
 <?php
 require("../settings/core.php");
 require("../controllers/global_controller.php");
-
+session_start();
 if (logged_in() == true) {
     // code...
     $c_id = get_id();
-$cartlist = view_cart_ctr($c_id);
-$email = email_ctr($c_id);
-$email = $email['customer_email'];
+    $cartlist = view_cart_ctr($c_id);
+    $email = email_ctr($c_id);
+    $email = $email['customer_email'];
 
-$cartlist = view_cart_ctr($c_id);
-$total = select_total_qty_from_cart_ctr($c_id);
-$total = $total[0];
-$total1 = $total['SUM(qty)'];
-$grandtotal = select_total_price_ctr($c_id);
-$grandtotal = $grandtotal[0];
-$grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
+    $cartlist = view_cart_ctr($c_id);
+    $total = select_total_qty_from_cart_ctr($c_id);
+    $total = $total[0];
+    $total1 = $total['SUM(qty)'];
+    $grandtotal = select_total_price_ctr($c_id);
+    $grandtotal = $grandtotal[0];
+    $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
     $adminn = check_admin();
     if ($adminn == 1) {
         header('location:../admin/admin.php');
@@ -242,7 +242,7 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                                                         ";
                                                     }
                                                     ?>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -255,16 +255,14 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                                             <div class="delivery-detail">
                                                 <h6>Hello,</h6>
                                                 <?php
-                                                //get customer name
-                                                $customer_name = customer_name_ctr($customer_id);
                                                 if (logged_in() == true) {
-                                                    echo "<h5>$customer_name</h5>";
+                                                    echo "<h5>" . $_SESSION['customer_name'] . "</h5>";
                                                 } else {
-                                                    echo "<h5>My Account but signed out</h5>";
+                                                    echo "<h5>Sign into your account</h5>";
                                                 }
                                                 ?>
-
                                             </div>
+
                                         </div>
 
                                         <div class="onhover-div onhover-div-login">
@@ -326,12 +324,13 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                                     foreach ($cat_list as $one_cat) {
                                         $cat_id = $one_cat['cat_id'];
                                         $cat_name = $one_cat['cat_name'];
+                                        $cimage = $one_cat['cat_image'];
                                         // code...
                                         echo "
                                         <ul class='category-list'>
                                         <li class='onhover-category-list'>
                                         <a value='$cat_id' href='shop-category.php?id=$cat_id' class='category-name'>
-                                        <img src='../assets/svg/1/vegetable.svg' alt=''>
+                                        <img src='../assets/svg/1/$cimage' alt=''>
                                         <h6>$cat_name</h6>
                                         <i class='fa-solid fa-angle-right'></i>
                                         </a>
@@ -367,13 +366,14 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
 
                                                 <ul class="dropdown-menu">
                                                     <li>
-                                                        <a class="dropdown-item" <?php echo"href='shop-category.php?id=1'"; ?>>Shop By
+                                                        <a class="dropdown-item" <?php echo "href='shop-category.php?id=1'"; ?>>Shop By
                                                             Category</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="all_products.php">Shop All products</a>
+                                                        <a class="dropdown-item" href="all_products.php">Shop All
+                                                            products</a>
                                                     </li>
-                                                    
+
                                                 </ul>
                                             </li>
                                         </ul>
@@ -392,7 +392,7 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
     <div class="mobile-menu d-md-none d-block mobile-cart">
         <ul>
             <li class="active">
-                <a href="index.php">
+                <a href="../index.php">
                     <i class="iconly-Home icli"></i>
                     <span>Home</span>
                 </a>
@@ -412,18 +412,27 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                 </a>
             </li>
 
-            <li>
-                <a href="wishlist.php" class="notifi-wishlist">
-                    <i class="iconly-Heart icli"></i>
-                    <span>My Wish</span>
-                </a>
-            </li>
 
             <li>
-                <a href="cart.php">
-                    <i class="iconly-Bag-2 icli fly-cate"></i>
-                    <span>Cart</span>
-                </a>
+                <?php
+                if (logged_in() == true) {
+                    // code...
+                    echo "
+                    <a href='cart.php'>
+                        <i class='iconly-Bag-2 icli fly-cate'></i>
+                        <span>Cart</span>
+                    </a>
+                    ";
+                } else {
+                    echo "
+                    <a href='login.php'>
+                        <i class='iconly-Bag-2 icli fly-cate'></i>
+                        <span>Cart</span>
+                    </a>
+                    ";
+                }
+                ?>
+
             </li>
         </ul>
     </div>
@@ -431,38 +440,38 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
 
     <script>
         function removeFromCart(product_id) {
-  $.ajax({
-    type: "GET",
-    url: "../functions/remove_from_cart.php",
-    data: { delete: product_id },
-    success: function(data) {
-      if (data == "success") {
-        Swal.fire({
-          icon: 'success',
-          title: 'Product removed from cart',
-          showConfirmButton: false,
-          timer: 1500
-        });
-        updateCart();
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error removing product from cart',
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }
-    },
-    error: function() {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error removing product from cart',
-        showConfirmButton: false,
-        timer: 1500
-      });
-    }
-  });
-}
+            $.ajax({
+                type: "GET",
+                url: "../functions/remove_from_cart.php",
+                data: { delete: product_id },
+                success: function (data) {
+                    if (data == "success") {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Product removed from cart',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        updateCart();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error removing product from cart',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error removing product from cart',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            });
+        }
 
     </script>
 

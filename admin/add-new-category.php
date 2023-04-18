@@ -1,6 +1,5 @@
 <?php
 include("bars.php");
-include "../controllers/product_controller.php";
 ?>
 
 <!DOCTYPE html>
@@ -43,88 +42,30 @@ include "../controllers/product_controller.php";
                                             <div class="col-sm-9">
                                                 <div class="dropdown icon-dropdown">
                                                     <button class="btn dropdown-toggle" type="button"
-                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                        name="picture">
+                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown">
                                                         Select Icon
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <?php
-                                                    $result = get_category_image_ctr();
-                                                    if ($result) {
-                                                        //images found
-                                                        foreach ($result as $one_image) {
-                                                            $image_id = $one_image['pic_id'];
-                                                            $pic_image = $one_image['pic_image'];
-                                                            echo "
-                                                            <li>
-                                                                <a class='dropdown-item'>
-                                                                    <img src='../assets/svg/1/$pic_image' class='img-fluid' alt=''>
-                                                                </a>
-                                                            </li>";
-                                                        }
+                                                        <input type="hidden" name="cimage" id="cimage" value="">
+                                                        <?php
+                                                        $result = get_category_image_ctr();
+                                                        if ($result) {
+                                                            //images found
+                                                            foreach ($result as $one_image) {
+                                                                $image_id = $one_image['pic_id'];
+                                                                $image_name = $one_image['pic_name'];
+                                                                $pic_image = $one_image['pic_image'];
+                                                                echo "
+                                                                <li>
+                                                                    <a class='dropdown-item'>
+                                                                        <img src='../assets/svg/1/$pic_image' class='img-fluid' alt='' data-id='$image_name'>
+                                                                    </a>
+                                                                </li>";
+                                                            }
 
-                                                    }
-                                                    ?>
-                                                        <!-- <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/vegetable.svg"
-                                                                    class="img-fluid" alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/cup.svg"
-                                                                    class="blur-up lazyload" alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/meats.svg" class="img-fluid"
-                                                                    alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/breakfast.svg"
-                                                                    class="img-fluid" alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/frozen.svg" class="img-fluid"
-                                                                    alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/biscuit.svg" class="img-fluid"
-                                                                    alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/grocery.svg" class="img-fluid"
-                                                                    alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/drink.svg" class="img-fluid"
-                                                                    alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/milk.svg" class="img-fluid"
-                                                                    alt="">
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">
-                                                                <img src="../assets/svg/1/pet.svg" class="img-fluid"
-                                                                    alt="">
-                                                            </a>
-                                                        </li> -->
+
+                                                        }
+                                                        ?>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -133,6 +74,26 @@ include "../controllers/product_controller.php";
                                             <button class="btn btn-animation w-100 justify-content-center" type="submit"
                                                 name="add_category" value="add_category">Add Category</button>
                                         </div>
+                                        <script>
+                                            document.addEventListener("DOMContentLoaded", function () {
+                                                let dropdownItems = document.querySelectorAll(".icon-dropdown .dropdown-item");
+                                                let cimageInput = document.getElementById("cimage");
+
+                                                dropdownItems.forEach(item => {
+                                                    item.addEventListener("click", function () {
+                                                        let imgSrc = item.querySelector("img").getAttribute("src");
+                                                        let imgName = imgSrc.split('/').pop(); // Extract the image name from the path
+                                                        cimageInput.value = imgName;
+
+                                                        // Update the dropdown button text
+                                                        let dropdownButton = document.getElementById("dropdownMenuButton1");
+                                                        dropdownButton.textContent = imgName;
+
+                                                    });
+                                                });
+                                            });
+                                        </script>
+
                                     </form>
                                 </div>
                             </div>

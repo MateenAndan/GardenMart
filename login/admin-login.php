@@ -19,10 +19,12 @@ if (isset($_POST['admin_login'])) {
 	if ($check) {
 		// set session for id and user role
 		session_start();
+		// After successful login
+		$_SESSION['admin_name'] = $check['admin_name'];
 		$_SESSION['cid'] = $check['admin_id'];
 		$_SESSION['role'] = $check['admin_role'];
 		// header('location:../admin/admin.php');
-		echo"success";
+		echo "success";
 	} else {
 		echo "error";
 	}

@@ -19,6 +19,7 @@ if (isset($_POST['login'])) {
 	if ($check) {
 		// set session for id and user role
 		session_start();
+		$_SESSION['customer_name'] = $check['customer_name'];
 		$_SESSION['cid'] = $check['customer_id'];
 		$_SESSION['role'] = $check['user_role'];
 		echo "success";

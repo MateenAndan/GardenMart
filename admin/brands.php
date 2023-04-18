@@ -1,5 +1,4 @@
 <?php
-include("../controllers/product_controller.php");
 include("bars.php");
 ?>
 <!DOCTYPE html>
@@ -81,15 +80,17 @@ include("bars.php");
         <!-- All User Table Ends-->
 
         <div class="container-fluid">
-            <!-- footer start-->
+        <!-- footer start-->
+        <div class="container-fluid">
             <footer class="footer">
                 <div class="row">
                     <div class="col-md-12 footer-copyright text-center">
-                        <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                        <p class="mb-0">Copyright 2023 © GardenMart</p>
                     </div>
                 </div>
             </footer>
-            <!-- footer end-->
+        </div>
+        <!-- footer End-->
         </div>
     </div>
     <!-- Container-fluid end -->

@@ -33,16 +33,15 @@ if (logged_in() == true) {
                 <div class="col-xl-8 ratio_65">
                     <div class="home-contain h-100">
                         <div class="h-100">
-                            <img src="../assets/images/vegetable/banner/1.jpg" class="bg-img blur-up lazyload" alt="">
+                            <img src="../images/test.jpg" class="bg-img blur-up lazyload" alt="">
                         </div>
                         <div class="home-detail p-center-left w-75">
                             <div>
-                                <h6>Exclusive offer <span>30% Off</span></h6>
-                                <h1 class="text-uppercase">Stay home & delivered your <span class="daily">Daily
-                                        Needs</span></h1>
-                                <p class="w-75 d-none d-sm-block">Vegetables contain many vitamins and minerals that are
-                                    good for your health.</p>
-                                <button onclick="location.href = 'shop-left-sidebar.php';" class="btn btn-animation mt-xxl-4 mt-2 home-button mend-auto">Shop Now <i class="fa-solid fa-right-long icon"></i></button>
+                                <h1 style="color:white" class="text-uppercase">Order from the comfort of your <span
+                                        class="daily">HOMES</span></h1>
+                                <button onclick="location.href = 'shop-left-sidebar.php';"
+                                    class="btn btn-animation mt-xxl-4 mt-2 home-button mend-auto">Shop Now <i
+                                        class="fa-solid fa-right-long icon"></i></button>
                             </div>
                         </div>
                     </div>
@@ -52,14 +51,13 @@ if (logged_in() == true) {
                     <div class="row g-4">
                         <div class="col-xl-12 col-md-6">
                             <div class="home-contain">
-                                <img src="../assets/images/vegetable/banner/2.jpg" class="bg-img blur-up lazyload" alt="">
+                                <img src="../images/meat.jpg" class="bg-img blur-up lazyload" alt="">
                                 <div class="home-detail p-center-left home-p-sm w-75">
                                     <div>
-                                        <h2 class="mt-0 text-danger">45% <span class="discount text-title">OFF</span>
                                         </h2>
-                                        <h3 class="theme-color">Nut Collection</h3>
-                                        <p class="w-75">We deliver organic vegetables & fruits</p>
-                                        <a href="shop-left-sidebar.php" class="shop-button">Shop Now <i class="fa-solid fa-right-long"></i></a>
+                                        <h3 class="theme-color">Fresh Meat</h3>
+                                        <a style="color:white" href="shop-left-sidebar.php" class="shop-button">Shop Now
+                                            <i class="fa-solid fa-right-long"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -67,13 +65,12 @@ if (logged_in() == true) {
 
                         <div class="col-xl-12 col-md-6">
                             <div class="home-contain">
-                                <img src="../assets/images/vegetable/banner/3.jpg" class="bg-img blur-up lazyload" alt="">
+                                <img src="../images/oh.jpg" class="bg-img blur-up lazyload" alt="">
                                 <div class="home-detail p-center-left home-p-sm w-75">
                                     <div>
                                         <h3 class="mt-0 theme-color fw-bold">Healthy Food</h3>
-                                        <h4 class="text-danger">Organic Market</h4>
-                                        <p class="organic">Start your daily shopping with some Organic food</p>
-                                        <a href="shop-left-sidebar.php" class="shop-button">Shop Now <i class="fa-solid fa-right-long"></i></a>
+                                        <a style="color:white" href="shop-left-sidebar.php" class="shop-button">Shop Now
+                                            <i class="fa-solid fa-right-long"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -91,56 +88,56 @@ if (logged_in() == true) {
             <div class="banner-slider">
                 <div>
                     <div class="banner-contain hover-effect">
-                        <img src="../assets/images/vegetable/banner/4.jpg" class="bg-img blur-up lazyload" alt="">
+                        <img src="../images/eggs.jpg" class="bg-img blur-up lazyload" alt="">
                         <div class="banner-details">
                             <div class="banner-box">
-                                <h6 class="text-danger">5% OFF</h6>
                                 <h5>Hot Deals on New Items</h5>
                                 <h6 class="text-content">Daily Essentials Eggs & Dairy</h6>
                             </div>
-                            <a href="shop-left-sidebar.php" class="banner-button text-white">Shop Now <i class="fa-solid fa-right-long ms-2"></i></a>
+                            <a href="shop-left-sidebar.php" class="banner-button text-white">Shop Now <i
+                                    class="fa-solid fa-right-long ms-2"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div>
                     <div class="banner-contain hover-effect">
-                        <img src="../assets/images/vegetable/banner/5.jpg" class="bg-img blur-up lazyload" alt="">
+                        <img src="../images/sweets.jpg" class="bg-img blur-up lazyload" alt="">
                         <div class="banner-details">
                             <div class="banner-box">
-                                <h6 class="text-danger">5% OFF</h6>
-                                <h5>Buy More & Save More</h5>
-                                <h6 class="text-content">Fresh Vegetables</h6>
+                                <h5>Buy Moreh\ & Save More</h5>
+                                <h6 class="text-content">Sweets</h6>
                             </div>
-                            <a href="shop-left-sidebar.php" class="banner-button text-white">Shop Now <i class="fa-solid fa-right-long ms-2"></i></a>
+                            <a href="shop-left-sidebar.php" class="banner-button text-white">Shop Now <i
+                                    class="fa-solid fa-right-long ms-2"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div>
                     <div class="banner-contain hover-effect">
-                        <img src="../assets/images/vegetable/banner/6.jpg" class="bg-img blur-up lazyload" alt="">
+                        <img src="../images/meat.jpg" class="bg-img blur-up lazyload" alt="">
                         <div class="banner-details">
                             <div class="banner-box">
-                                <h6 class="text-danger">5% OFF</h6>
                                 <h5>Organic Meat Prepared</h5>
                                 <h6 class="text-content">Delivered to Your Home</h6>
                             </div>
-                            <a href="shop-left-sidebar.php" class="banner-button text-white">Shop Now <i class="fa-solid fa-right-long ms-2"></i></a>
+                            <a href="shop-left-sidebar.php" class="banner-button text-white">Shop Now <i
+                                    class="fa-solid fa-right-long ms-2"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div>
                     <div class="banner-contain hover-effect">
-                        <img src="../assets/images/vegetable/banner/7.jpg" class="bg-img blur-up lazyload" alt="">
+                        <img src="../images/snacks.jpg" class="bg-img blur-up lazyload" alt="">
                         <div class="banner-details">
                             <div class="banner-box">
-                                <h6 class="text-danger">5% OFF</h6>
                                 <h5>Buy More & Save More</h5>
-                                <h6 class="text-content">Nuts & Snacks</h6>
+                                <h6 class="text-content">Snacks</h6>
                             </div>
-                            <a href="shop-left-sidebar.php" class="banner-button text-white">Shop Now <i class="fa-solid fa-right-long ms-2"></i></a>
+                            <a href="shop-left-sidebar.php" class="banner-button text-white">Shop Now <i
+                                    class="fa-solid fa-right-long ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -164,17 +161,18 @@ if (logged_in() == true) {
                                     foreach ($cat_list as $one_cat) {
                                         $cat_id = $one_cat['cat_id'];
                                         $cat_name = $one_cat['cat_name'];
+                                        $cimage = $one_cat['cat_image'];
                                         // code...
                                         echo "
-                                                    <li class='pb-30'>
+                                        <li class='pb-30'>
                                                     <div class='category-list'>
-                                                    <img src='../assets/svg/1/vegetable.svg' class='blur-up lazyload' alt=''>
+                                                    <img src='../assets/svg/1/$cimage' class='blur-up lazyload' alt=''>
                                                     <h5>
                                                     <a value='$cat_id' href='shop-category.php?id=$cat_id'>$cat_name</a>
                                                     </h5>
                                                     </div>
-                                                    </li>
-                                                ";
+                                        </li>
+                                        ";
                                     }
                                 } else {
                                     //no category found
@@ -186,7 +184,7 @@ if (logged_in() == true) {
 
                         <div class="ratio_156 section-t-space">
                             <div class="home-contain hover-effect">
-                                <img src="../assets/images/vegetable/banner/8.jpg" class="bg-img blur-up lazyload" alt="">
+                                <img src="../images/seafood.jpg" class="bg-img blur-up lazyload" alt="">
                                 <div class="home-detail p-top-left
                                         home-p-medium">
                                     <div>
@@ -206,7 +204,8 @@ if (logged_in() == true) {
 
                         <div class="ratio_medium section-t-space">
                             <div class="home-contain hover-effect">
-                                <img src="../assets/images/vegetable/banner/11.jpg" class="img-fluid blur-up lazyload" alt="">
+                                <img src="../assets/images/vegetable/banner/11.jpg" class="img-fluid blur-up lazyload"
+                                    alt="">
                                 <div class="home-detail p-top-left
                                         home-p-medium">
                                     <div>
@@ -235,7 +234,7 @@ if (logged_in() == true) {
                                         d-block">
                                     <?php
                                     //getting 5 products at random
-
+                                    
                                     $productlist = get_four_product_ctr();
                                     foreach ($productlist as $aproduct) {
                                         $product_id = $aproduct['product_id'];
@@ -294,7 +293,7 @@ if (logged_in() == true) {
                                 <!-- start -->
                                 <?php
                                 //getting 5 products at random
-
+                                
                                 $productlist = get_five_product_ctr();
                                 foreach ($productlist as $aproduct) {
                                     $product_id = $aproduct['product_id'];
@@ -422,13 +421,13 @@ if (logged_in() == true) {
                         foreach ($cat_list as $one_cat) {
                             $cat_name = $one_cat['cat_name'];
                             $cat_id = $one_cat['cat_id'];
-                            $cat_image = $one_cat['cat_image'];
+                            $cimage = $one_cat['cat_image'];
                             echo "
                                     <div>
                                         <a value='$cat_id' href='shop-category.php?id=$cat_id'
                                             class='category-box category-dark'>
                                             <div>
-                                                <img src='../assets/svg/1/vegetable.svg'
+                                                <img src='../assets/svg/1/$cimage'
                                                     class='blur-up lazyload' alt=''>
                                                 <h5>$cat_name</h5>
                                             </div>
@@ -444,7 +443,8 @@ if (logged_in() == true) {
                         <div class="row g-md-4 g-3">
                             <div class="col-md-6">
                                 <div class="banner-contain hover-effect">
-                                    <img src="../assets/images/vegetable/banner/9.jpg" class="bg-img blur-up lazyload" alt="">
+                                    <img src="../assets/images/vegetable/banner/9.jpg" class="bg-img blur-up lazyload"
+                                        alt="">
                                     <div class="banner-details p-center-left
                                             p-4">
                                         <div>
@@ -463,7 +463,8 @@ if (logged_in() == true) {
                             </div>
                             <div class="col-md-6">
                                 <div class="banner-contain hover-effect">
-                                    <img src="../assets/images/vegetable/banner/10.jpg" class="bg-img blur-up lazyload" alt="">
+                                    <img src="../assets/images/vegetable/banner/10.jpg" class="bg-img blur-up lazyload"
+                                        alt="">
                                     <div class="banner-details p-center-left
                                             p-4">
                                         <div>
@@ -499,7 +500,7 @@ if (logged_in() == true) {
                             <!-- start -->
                             <?php
                             //getting 5 products at random
-
+                            
                             $productlist = get_five_product_ctr();
                             foreach ($productlist as $aproduct) {
                                 $product_id = $aproduct['product_id'];
@@ -629,7 +630,8 @@ if (logged_in() == true) {
                         <div class="row g-md-4 g-3">
                             <div class="col-xxl-8 col-xl-12 col-md-7">
                                 <div class="banner-contain hover-effect">
-                                    <img src="../assets/images/vegetable/banner/12.jpg" class="bg-img blur-up lazyload" alt="">
+                                    <img src="../assets/images/vegetable/banner/12.jpg" class="bg-img blur-up lazyload"
+                                        alt="">
                                     <div class="banner-details p-center-left
                                             p-4">
                                         <div>
@@ -658,7 +660,8 @@ if (logged_in() == true) {
                             <div class="col-xxl-4 col-xl-12 col-md-5">
                                 <a href="shop-left-sidebar.php" class="banner-contain hover-effect
                                         h-100">
-                                    <img src="../assets/images/vegetable/banner/13.jpg" class="bg-img blur-up lazyload" alt="">
+                                    <img src="../assets/images/vegetable/banner/13.jpg" class="bg-img blur-up lazyload"
+                                        alt="">
                                     <div class="banner-details p-center-left
                                             p-4 h-100">
                                         <div>
@@ -695,7 +698,7 @@ if (logged_in() == true) {
                             <ul class='product-list'>
                                 <?php
                                 //getting 5 products at random
-
+                                
                                 $productlist = get_five_product_ctr();
                                 foreach ($productlist as $aproduct) {
                                     $product_id = $aproduct['product_id'];
@@ -736,7 +739,7 @@ if (logged_in() == true) {
                             <ul class="product-list">
                                 <?php
                                 //getting 5 products at random
-
+                                
                                 $productlist = get_five_product_ctr();
                                 foreach ($productlist as $aproduct) {
                                     $product_id = $aproduct['product_id'];
@@ -777,7 +780,7 @@ if (logged_in() == true) {
                             <ul class="product-list">
                                 <?php
                                 //getting 5 products at random
-
+                                
                                 $productlist = get_five_product_ctr();
                                 foreach ($productlist as $aproduct) {
                                     $product_id = $aproduct['product_id'];
@@ -828,7 +831,8 @@ if (logged_in() == true) {
     <?php include("footer.php") ?>
 
     <!-- Quick View Modal Box Start -->
-    <div class="modal fade theme-modal view-modal" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade theme-modal view-modal" id="view" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
             <div class="modal-content">
                 <div class="modal-header p-0">
@@ -840,7 +844,8 @@ if (logged_in() == true) {
                     <div class="row g-sm-4 g-2">
                         <div class="col-lg-6">
                             <div class="slider-image">
-                                <img src="../assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload" alt="">
+                                <img src="../assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload"
+                                    alt="">
                             </div>
                         </div>
 
@@ -914,9 +919,11 @@ if (logged_in() == true) {
                                 </div>
 
                                 <div class="modal-button">
-                                    <button onclick="location.href = 'cart.php';" class="btn btn-md add-cart-button icon">Add
+                                    <button onclick="location.href = 'cart.php';"
+                                        class="btn btn-md add-cart-button icon">Add
                                         To Cart</button>
-                                    <button onclick="location.href = 'product-left.php';" class="btn theme-bg-color view-button icon text-white fw-bold btn-md">
+                                    <button onclick="location.href = 'product-left.php';"
+                                        class="btn theme-bg-color view-button icon text-white fw-bold btn-md">
                                         View More Details</button>
                                 </div>
                             </div>
@@ -929,7 +936,8 @@ if (logged_in() == true) {
     <!-- Quick View Modal Box End -->
 
     <!-- Deal Box Modal Start -->
-    <div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
             <div class="modal-content">
                 <div class="modal-header">
@@ -947,7 +955,8 @@ if (logged_in() == true) {
                             <li class="list-1">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.php" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload" alt="">
+                                        <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
+                                            alt="">
                                     </a>
 
                                     <a href="shop-left-sidebar.php" class="deal-contain">
@@ -960,7 +969,8 @@ if (logged_in() == true) {
                             <li class="list-2">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.php" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload" alt="">
+                                        <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
+                                            alt="">
                                     </a>
 
                                     <a href="shop-left-sidebar.php" class="deal-contain">
@@ -973,7 +983,8 @@ if (logged_in() == true) {
                             <li class="list-3">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.php" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload" alt="">
+                                        <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
+                                            alt="">
                                     </a>
 
                                     <a href="shop-left-sidebar.php" class="deal-contain">
@@ -986,7 +997,8 @@ if (logged_in() == true) {
                             <li class="list-1">
                                 <div class="deal-offer-contain">
                                     <a href="shop-left-sidebar.php" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload" alt="">
+                                        <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
+                                            alt="">
                                     </a>
 
                                     <a href="shop-left-sidebar.php" class="deal-contain">
@@ -1060,47 +1072,47 @@ if (logged_in() == true) {
     <script src="../assets/js/script.js"></script>
 
     <script>
-function addToCart(product_id) {
-    $.ajax({
-        type: "GET",
-        url: "../functions/add_to_cart.php",
-        data: { pid: product_id },
-        success: function(data) {
-            if (data == "added") {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Product added to cart',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            } else if (data == "exists") {
-                Swal.fire({
-                    icon: 'info',
-                    title: 'Product already in cart',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error adding product to cart',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            }
-        },
-        error: function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error adding product to cart',
-                showConfirmButton: false,
-                timer: 1500
+        function addToCart(product_id) {
+            $.ajax({
+                type: "GET",
+                url: "../functions/add_to_cart.php",
+                data: { pid: product_id },
+                success: function (data) {
+                    if (data == "added") {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Product added to cart',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    } else if (data == "exists") {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Product already in cart',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error adding product to cart',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error adding product to cart',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
             });
         }
-    });
-}
 
-</script>
+    </script>
 
 </body>
 

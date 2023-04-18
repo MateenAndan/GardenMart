@@ -55,13 +55,14 @@ if (logged_in() == true) {
                                 foreach ($cat_list as $one_cat) {
                                     $cat_id = $one_cat['cat_id'];
                                     $cat_name = $one_cat['cat_name'];
+                                    $cimage = $one_cat['cat_image'];
                                     $active_class = isset($_GET['id']) && $_GET['id'] == $cat_id ? 'active' : '';
                                     // code...
                                     echo "
                                         <li class='nav-item' role='presentation'>
                                             <button class='nav-link  $active_class' id='pills-vegetables' data-bs-toggle='pill'
                                                 data-bs-target='#pills-vegetable' type='button' role='tab'
-                                                aria-selected='true' value='$cat_id' onclick='redirectToPage($cat_id)'>$cat_name <img src='../assets/svg/1/vegetable.svg'
+                                                aria-selected='true' value='$cat_id' onclick='redirectToPage($cat_id)'>$cat_name <img src='../assets/svg/1/$cimage'
                                                 class='blur-up lazyload' alt=''>
                                             </button>
                                         </li>

@@ -264,15 +264,15 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
 
             <div class="col-xxl-3">
                 <div class="summery-box p-sticky">
-                <?php
-						foreach ($cartlist as $oneproduct) {
+                    <?php
+                    foreach ($cartlist as $oneproduct) {
 
-							$product_title = $oneproduct['product_title'];
-							$product_price = $oneproduct['product_price'];
-							$product_qty=  $oneproduct['qty'];
-							$itemtotal_price= $product_price * $product_qty;
-						}
-						?>
+                        $product_title = $oneproduct['product_title'];
+                        $product_price = $oneproduct['product_price'];
+                        $product_qty = $oneproduct['qty'];
+                        $itemtotal_price = $product_price * $product_qty;
+                    }
+                    ?>
                     <div class="summery-header">
                         <h3>Cart Total</h3>
                     </div>
@@ -289,18 +289,20 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                     <ul class="summery-total">
                         <li class="list-total border-top-0">
                             <h4>Total</h4>
-                            <?php echo"<h4 class='price theme-color'>$grandtotal1</h4>"; ?>
+                            <?php echo "<h4 class='price theme-color'>GHS $grandtotal1</h4>"; ?>
                         </li>
                     </ul>
 
                     <div class="button-group cart-button">
                         <ul>
                             <li>
-                                <button onclick="location.href = 'checkout.php';" class="btn btn-animation proceed-btn fw-bold">Process To Checkout</button>
+                                <button onclick="location.href = 'checkout.php';"
+                                    class="btn btn-animation proceed-btn fw-bold">Process To Checkout</button>
                             </li>
 
                             <li>
-                                <button onclick="location.href = '../index.php';" class="btn btn-light shopping-button text-dark">
+                                <button onclick="location.href = '../index.php';"
+                                    class="btn btn-light shopping-button text-dark">
                                     <i class="fa-solid fa-arrow-left-long"></i>Return To Shopping</button>
                             </li>
                         </ul>
@@ -417,7 +419,8 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
 <!-- Location Modal End -->
 
 <!-- Deal Box Modal Start -->
-<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
         <div class="modal-content">
             <div class="modal-header">
@@ -435,7 +438,8 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload" alt="">
+                                    <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
+                                        alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -448,7 +452,8 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                         <li class="list-2">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload" alt="">
+                                    <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
+                                        alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -461,7 +466,8 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                         <li class="list-3">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload" alt="">
+                                    <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
+                                        alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -474,7 +480,8 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
                         <li class="list-1">
                             <div class="deal-offer-contain">
                                 <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload" alt="">
+                                    <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
+                                        alt="">
                                 </a>
 
                                 <a href="shop-left-sidebar.html" class="deal-contain">
@@ -534,54 +541,54 @@ $grandtotal1 = $grandtotal['SUM(products.product_price*cart.qty)'];
 <script src="../assets/js/script.js"></script>
 <!--quantity-->
 <script>
-    $('.value-plus').on('click', function() {
+    $('.value-plus').on('click', function () {
         var divUpd = $(this).parent().find('.value'),
             newVal = parseInt(divUpd.text(), 10) + 1;
         divUpd.text(newVal);
     });
 
-    $('.value-minus').on('click', function() {
+    $('.value-minus').on('click', function () {
         var divUpd = $(this).parent().find('.value'),
             newVal = parseInt(divUpd.text(), 10) - 1;
         if (newVal >= 1) divUpd.text(newVal);
     });
 </script>
 <script>
-        function removeFromCart(product_id) {
-  $.ajax({
-    type: "GET",
-    url: "../functions/remove_from_cart.php",
-    data: { delete: product_id },
-    success: function(data) {
-      if (data == "success") {
-        Swal.fire({
-          icon: 'success',
-          title: 'Product removed from cart',
-          showConfirmButton: false,
-          timer: 1500
+    function removeFromCart(product_id) {
+        $.ajax({
+            type: "GET",
+            url: "../functions/remove_from_cart.php",
+            data: { delete: product_id },
+            success: function (data) {
+                if (data == "success") {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Product removed from cart',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    updateCart();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error removing product from cart',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error removing product from cart',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
         });
-        updateCart();
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error removing product from cart',
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }
-    },
-    error: function() {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error removing product from cart',
-        showConfirmButton: false,
-        timer: 1500
-      });
     }
-  });
-} 
 
-    </script>
+</script>
 
 </body>
 

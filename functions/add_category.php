@@ -1,18 +1,32 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 //connect the controller
-require("../controllers/product_controller.php");
+require("../controllers/global_controller.php");
 
 //check for
+//insert category name and image
 if (isset($_POST['add_category'])) {
 	//register user
 	//grab from data
 	$cname = ($_POST['cname']);
-	$cimage = ($_FILES['picture']['name']);
+	$cimage = isset($_POST['cimage']) ? $_POST['cimage'] : '';
+
+	// var_dump($cname); // Debug
+    // var_dump($cimage); // Debug
+
+    // if (empty($cname) || empty($cimage)) {
+    //     echo "Category name or image not provided";
+    //     exit;
+    // }
 	
 	//call a controller
 	$check = insert_category_ctr($cname, $cimage);
 
 	if ($check) {
+		
 		header("location:../admin/category.php");
 	} else {
 		echo "Insert failed";

@@ -12,6 +12,19 @@ function cleanText($data)
 }
 
 
+// ░█████╗░██╗░░░██╗░██████╗████████╗░█████╗░███╗░░░███╗███████╗██████╗░  ░█████╗░███╗░░██╗██████╗░
+// ██╔══██╗██║░░░██║██╔════╝╚══██╔══╝██╔══██╗████╗░████║██╔════╝██╔══██╗  ██╔══██╗████╗░██║██╔══██╗
+// ██║░░╚═╝██║░░░██║╚█████╗░░░░██║░░░██║░░██║██╔████╔██║█████╗░░██████╔╝  ███████║██╔██╗██║██║░░██║
+// ██║░░██╗██║░░░██║░╚═══██╗░░░██║░░░██║░░██║██║╚██╔╝██║██╔══╝░░██╔══██╗  ██╔══██║██║╚████║██║░░██║
+// ╚█████╔╝╚██████╔╝██████╔╝░░░██║░░░╚█████╔╝██║░╚═╝░██║███████╗██║░░██║  ██║░░██║██║░╚███║██████╔╝
+// ░╚════╝░░╚═════╝░╚═════╝░░░░╚═╝░░░░╚════╝░╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝  ╚═╝░░╚═╝╚═╝░░╚══╝╚═════╝░
+
+// ░█████╗░██████╗░███╗░░░███╗██╗███╗░░██╗
+// ██╔══██╗██╔══██╗████╗░████║██║████╗░██║
+// ███████║██║░░██║██╔████╔██║██║██╔██╗██║
+// ██╔══██║██║░░██║██║╚██╔╝██║██║██║╚████║
+// ██║░░██║██████╔╝██║░╚═╝░██║██║██║░╚███║
+// ╚═╝░░╚═╝╚═════╝░╚═╝░░░░░╚═╝╚═╝╚═╝░░╚══╝
 
 // -- CUSTOMER -- //
 //--INSERT--//
@@ -54,6 +67,57 @@ function admin_name_ctr($admin_id)
   return $admin_name->admin_name_cls($admin_id);
 }
 
+function get_all_admin_ctr()
+{
+  $get_all_admin = new customer_class();
+  return $get_all_admin->get_all_admin_cls();
+}
+
+function get_all_customer_ctr()
+{
+  $get_all_customer = new customer_class();
+  return $get_all_customer->get_all_customer_cls();
+}
+
+function selectt_admin_ctr($email, $password)
+{
+  $select_admin = new customer_class();
+  return $select_admin->select_admin_cls($email, $password);
+}
+
+function get_all_cart_items_ctr($c_id)
+{
+  $get_all_cart_items = new cart_class();
+  return $get_all_cart_items->get_all_cart_items_cls($c_id);
+}
+
+function get_top_selling_products_ctr($limit = 5)
+{
+  $top_selling = new cart_class();
+  return $top_selling->get_top_selling_products_cls($limit);
+}
+
+//recent orders
+function get_recent_orders_ctr($limit = 4)
+{
+  $get_recent_orders = new cart_class();
+  return $get_recent_orders->get_recent_orders_cls($limit);
+}
+
+function update_revenue_ctr($amount)
+{
+  $update_revenue = new cart_class();
+  return $update_revenue->update_revenue_cls($amount);
+}
+
+function get_revenue_data_ctr()
+{
+  $cart = new cart_class();
+  return $cart->get_revenue_data_cls();
+}
+
+
+
 //--UPDATE--//
 
 //--DELETE--//
@@ -62,8 +126,12 @@ function admin_name_ctr($admin_id)
 
 
 
-
-// -- PRODUCT -- //
+// ██████╗░██████╗░░█████╗░██████╗░██╗░░░██╗░█████╗░████████╗
+// ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║░░░██║██╔══██╗╚══██╔══╝
+// ██████╔╝██████╔╝██║░░██║██║░░██║██║░░░██║██║░░╚═╝░░░██║░░░
+// ██╔═══╝░██╔══██╗██║░░██║██║░░██║██║░░░██║██║░░██╗░░░██║░░░
+// ██║░░░░░██║░░██║╚█████╔╝██████╔╝╚██████╔╝╚█████╔╝░░░██║░░░
+// ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═════╝░░╚═════╝░░╚════╝░░░░╚═╝░░░
 //--INSERT--//
 function insert_brand_ctr($bname)
 {
@@ -111,6 +179,19 @@ function get_all_category_ctr()
   $brand_list = new product_class();
   return $brand_list->get_all_category_cls();
 }
+
+function get_all_category_page_ctr($start, $limit)
+{
+  $brand_list = new product_class();
+  return $brand_list->get_all_category_cls($start, $limit);
+}
+
+function get_category_count_ctr()
+{
+  $count = new product_class();
+  return $count->get_category_count_cls();
+}
+
 
 //category image
 function get_category_image_ctr()
@@ -174,10 +255,10 @@ function update_brand_ctr($bnamee, $bidd)
   return $update_brand->update_brand_cls($bnamee, $bidd);
 }
 
-function update_category_ctr($cnamee, $cidd)
+function update_category_ctr($cnamee, $cimage, $cidd)
 {
   $update_cat = new product_class();
-  return $update_cat->update_category_cls($cnamee, $cidd);
+  return $update_cat->update_category_cls($cnamee, $cimage, $cidd);
 }
 
 function update_product_ctr($pidd, $pbrand, $pcat, $ptitle, $pprice, $pqty, $pdesc, $pimage, $pkey)
@@ -216,7 +297,12 @@ function delete_product_ctr($productID)
 
 
 
-// -- CART -- //
+// ░█████╗░░█████╗░██████╗░████████╗
+// ██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝
+// ██║░░╚═╝███████║██████╔╝░░░██║░░░
+// ██║░░██╗██╔══██║██╔══██╗░░░██║░░░
+// ╚█████╔╝██║░░██║██║░░██║░░░██║░░░
+// ░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░
 //--INSERT--//
 // add to cart
 function add_to_cart_ctr($p_id, $ip_add, $c_id, $qty)
@@ -232,6 +318,13 @@ function order_ctr($customer_id, $ino, $odate, $ostatus)
   return $insert->order_cls($customer_id, $ino, $odate, $ostatus);
 }
 
+function get_total_orders_ctr()
+{
+  $orders = new cart_class();
+  return $orders->get_total_orders_cls();
+}
+
+
 
 //add to order details
 function order_details_ctr($p_id, $qty)
@@ -246,6 +339,13 @@ function payment_ctr($amt, $customer_id, $order_id, $currency, $payment_date)
   $insert = new cart_class();
   return $insert->payment_cls($amt, $customer_id, $order_id, $currency, $payment_date);
 }
+
+function get_total_revenue_ctr()
+{
+  $revenue = new cart_class();
+  return $revenue->get_total_revenue_cls();
+}
+
 
 
 //--SELECT--//
@@ -313,6 +413,11 @@ function decrease_qty_ctr($pqty)
   return $view->decrease_qty_cls($pqty);
 }
 
+function insert_order_details_ctr($order_id, $product_id, $qty)
+{
+  $insert = new cart_class();
+  return $insert->insert_order_details_cls($order_id, $product_id, $qty);
+}
 
 //--DELETE--//
 // remove from cart
@@ -320,4 +425,11 @@ function delete_from_cart_ctr($p_id, $c_id)
 {
   $remove = new cart_class();
   return $remove->delete_from_cart_cls($p_id, $c_id);
+}
+
+
+function get_today_revenue_ctr()
+{
+  $today = new cart_class();
+  return $today->get_today_revenue_cls();
 }

@@ -1,6 +1,5 @@
 <?php
 include("bars.php");
-include"../controllers/product_controller.php";
 ?>
 
 <!DOCTYPE html>
@@ -86,26 +85,6 @@ include"../controllers/product_controller.php";
                                                 </select>
                                             </div>
                                         </div>
-
-                                        <!-- <div class="mb-4 row align-items-center">
-                                            <label
-                                            class="col-sm-3 col-form-label form-label-title">Exchangeable</label>
-                                            <div class="col-sm-9">
-                                                <label class="switch">
-                                                    <input type="checkbox"><span class="switch-state"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <label
-                                            class="col-sm-3 col-form-label form-label-title">Refundable</label>
-                                            <div class="col-sm-9">
-                                                <label class="switch">
-                                                    <input type="checkbox" checked=""><span
-                                                    class="switch-state"></span>
-                                                </label>
-                                            </div>
-                                        </div> -->
                                     </div>
                                 </div>
 
@@ -151,15 +130,6 @@ include"../controllers/product_controller.php";
                                             </div>
                                         </div>
 
-                                        <!-- <div class="row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Thumbnail
-                                            Image</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control form-choose" type="file"
-                                                id="formFileMultiple1" multiple>
-                                            </div>
-                                        </div> -->
-
                                     </div>
                                 </div>
 
@@ -190,18 +160,6 @@ include"../controllers/product_controller.php";
                                                 <input class="form-control" type="text" name="pqty"required>
                                             </div>
                                         </div>
-                                        <!-- <div class="mb-4 row align-items-center">
-                                            <label class="col-sm-3 col-form-label form-label-title">Stock
-                                            Status</label>
-                                            <div class="col-sm-9">
-                                                <select class="js-example-basic-single w-100" name="state">
-                                                    <option>In Stock</option>
-                                                    <option>Out Of Stock</option>
-                                                    <option>On Backorder</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-
 
                                     </div>
                                 </div>
@@ -217,17 +175,17 @@ include"../controllers/product_controller.php";
 
         <!-- New Product Add End -->
 
-        <!-- footer Start -->
+        <!-- footer start-->
         <div class="container-fluid">
             <footer class="footer">
                 <div class="row">
                     <div class="col-md-12 footer-copyright text-center">
-                        <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                        <p class="mb-0">Copyright 2023 © GardenMart</p>
                     </div>
                 </div>
             </footer>
         </div>
-        <!-- footer En -->
+        <!-- footer End-->
     </div>
     <!-- Container-fluid End -->
 </div>

@@ -1,6 +1,6 @@
 <?php
 //connect the controller
-require("../controllers/product_controller.php");
+require("../controllers/global_controller.php");
 
 //check for 
 if (isset($_POST['update_product'])){

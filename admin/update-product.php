@@ -1,6 +1,6 @@
 <?php
 include("bars.php");
-include"../controllers/product_controller.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -228,17 +228,17 @@ include"../controllers/product_controller.php";
 
         <!-- New Product Add End -->
 
-        <!-- footer Start -->
+        <!-- footer start-->
         <div class="container-fluid">
             <footer class="footer">
                 <div class="row">
                     <div class="col-md-12 footer-copyright text-center">
-                        <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                        <p class="mb-0">Copyright 2023 © GardenMart</p>
                     </div>
                 </div>
             </footer>
         </div>
-        <!-- footer En -->
+        <!-- footer End-->
     </div>
     <!-- Container-fluid End -->
 </div>

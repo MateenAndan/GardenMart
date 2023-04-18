@@ -331,7 +331,7 @@ var options = {
     yaxis: {
         labels: {
             formatter: function (value) {
-                return "$" + value;
+                return "GHS" + value;
             }
         },
         crosshairs: {
@@ -348,7 +348,7 @@ var options = {
         },
     },
     xaxis: {
-        categories: ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec",],
+        categories: ["Dan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec",],
         range: undefined,
         axisBorder: {
             low: 0,

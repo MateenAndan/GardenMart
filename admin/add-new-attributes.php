@@ -71,17 +71,17 @@ include("bars.php");
         </div>
         <!-- New Product Add End -->
 
-        <!-- footer Start -->
+        <!-- footer start-->
         <div class="container-fluid">
             <footer class="footer">
                 <div class="row">
                     <div class="col-md-12 footer-copyright text-center">
-                        <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                        <p class="mb-0">Copyright 2023 © GardenMart</p>
                     </div>
                 </div>
             </footer>
         </div>
-        <!-- footer End -->
+        <!-- footer End-->
     </div>
     <!-- Container-fluid End -->
 </div>
